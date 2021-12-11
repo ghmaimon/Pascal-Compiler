@@ -1,0 +1,15 @@
+PROGRAM::= program ID ; BLOCK .
+BLOCK ::= CONSTS VARS INSTS
+CONSTS ::= const ID = NUM ; { ID = NUM ; } | eps
+VARS ::= var ID { , ID } ; | eps
+INSTS ::= begin INST { ; INST } end
+INST ::= INSTS | AFFEC | SI | TANTQUE | ECRIRE | LIRE | eps
+AFFEC ::= ID := EXPR
+SI ::= if COND then INST
+TANTQUE::= while COND do INST
+ECRIRE ::= write ( EXPR { , EXPR } )
+LIRE ::= read ( ID { , ID } )
+COND ::= EXPR [= | <> | < | > | <= | >=] EXPR
+EXPR ::= TERM { [+ | -] TERM }
+TERM ::= FACT { [* | /] FACT }
+FACT ::= ID | NUM | ( EXPR )
