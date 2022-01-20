@@ -132,7 +132,8 @@ boolean lire_errones () {
 }
 
 void ignor_whitespaces() {
-    while (car_cour == ' ' || car_cour == '\n' || car_cour == '\t')
+    while (car_cour == ' ' || car_cour == '\n' ||
+         car_cour == '\t' || car_cour == '\r')
     {
         lire_car();
     }

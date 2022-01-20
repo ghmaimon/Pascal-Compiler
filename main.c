@@ -13,7 +13,8 @@ int main(int argc, char const *argv[])
     token_suiv();
     do
     {
-        program();
+        printf("%s\n", tokens[sym_cour.code]);
+        token_suiv();
     } while (sym_cour.code != FIN_TOKEN 
         && sym_cour.code != ERREUR_TOKEN);
     printf("programm success\n");
